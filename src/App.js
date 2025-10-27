@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Apisignup from './Apisignup';
+import Apilogin from './Apilogin';
+import Successlogin from './Successlogin';
+import Student from './Student';
+ 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+        <BrowserRouter>
+       
+         <Routes>
+          <Route path='/apisignup'element={<Apisignup/>}/>
+          <Route path='/apilogin' element={<Apilogin/>}/>
+          <Route path='/success' element={<Successlogin/>}/>
+          <Route path='/student' element={<Student/>}/>
+         </Routes>
+        </BrowserRouter>
+   </div>
   );
 }
 
